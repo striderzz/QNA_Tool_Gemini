@@ -19,10 +19,3 @@ A minimal Flask web application that leverages Google’s GenAI client to genera
 
 ---
 
-## 🛠️ Installation
-
-1. **Clone this repository**  
-   ```bash
-   git clone https://github.com/yourusername/flask-gemini-chat.git
-   cd flask-gemini-chat
-
