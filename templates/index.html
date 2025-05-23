@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta 
+    name="description" 
+    content="A simple Q&A tool powered by Flask"
+  >
+  <link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/styles.css') }}"
+  >
+  <title>Q&A Tool</title>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Q&A Tool</h1>
+    </header>
+
+    <form method="post" novalidate>
+      <div class="form-group">
+      
+        <input
+          type="text"
+          id="question"
+          name="question"
+          placeholder="Type your question here…"
+          required
+          autofocus
+        >
+      </div>
+      <br>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <section 
+      id="answer-container" 
+      aria-live="polite" 
+      class="answer-box"
+    >
+      {% if answer %}
+        <h2>Answer</h2>
+        <p>{{ answer.text }}</p>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

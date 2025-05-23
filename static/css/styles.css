@@ -1,0 +1,158 @@
+/* static/css/styles.css */
+
+/* ==============================
+   Variables & Color Palette
+   ============================== */
+:root {
+  --color-bg: #f9fafb;
+  --color-card-bg: #ffffff;
+  --color-primary: #2e4d3a;          /* Dark green “Lattele”-style */
+  --color-primary-light: #eaf4eb;    /* Light green tint */
+  --color-border: #d1d5db;
+  --color-text: #1f2937;
+  --color-text-light: #4b5563;
+}
+
+/* ==============================
+   Global Styles
+   ============================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ==============================
+   Layout & Container
+   ============================== */
+.container {
+  width: 100%;
+  max-width: 540px;
+  margin: auto;
+  padding: 2.5rem 2rem;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* more spacing between items */
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 0;
+}
+
+/* ==============================
+   Form Elements
+   ============================== */
+/* Remove label; rely on placeholder */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Bigger input with professional styling */
+input[type="text"] {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  font-family: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]::placeholder {
+  color: var(--color-text-light);
+  font-style: italic;
+  opacity: 1;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(46, 77, 58, 0.2);
+}
+
+/* ==============================
+   Button Styles
+   ============================== */
+button {
+  align-self: flex-end;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #24402f; /* slightly darker */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ==============================
+   Answer Box
+   ============================== */
+.answer-box {
+  padding: 1.2rem;
+  background-color: var(--color-primary-light);
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  min-height: 4em;
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ==============================
+   Responsive Adjustments
+   ============================== */
+@media (max-width: 500px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  input[type="text"] {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+    align-self: stretch;
+  }
+}
